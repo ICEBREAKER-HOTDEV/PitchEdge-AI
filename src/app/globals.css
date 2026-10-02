@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #070b10;
+  --panel: #0d141c;
+  --panel-2: #121b25;
+  --line: #1f2b38;
+  --line-2: #2a3a4b;
+  --ink: #e6edf3;
+  --muted: #8b9bab;
+  --faint: #5b6b7b;
+  --pitch: #22c55e;
+  --pitch-dim: #14532d;
+  --amber: #f5b942;
+  --rose: #f43f5e;
+  --sky: #38bdf8;
+  --violet: #a78bfa;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-pitch: var(--pitch);
+  --color-pitch-dim: var(--pitch-dim);
+  --color-amber: var(--amber);
+  --color-rose: var(--rose);
+  --color-sky: var(--sky);
+  --color-violet: var(--violet);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(34, 197, 94, 0.07), transparent 60%),
+    radial-gradient(900px 400px at -10% 10%, rgba(56, 189, 248, 0.05), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.num {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+input[type="range"] {
+  accent-color: var(--pitch);
+  width: 100%;
+}
+
+input[type="number"],
+select {
+  background: var(--panel-2);
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: var(--ink);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13px;
+  width: 100%;
+}
+
+input[type="number"]:focus,
+select:focus {
+  outline: 1px solid var(--pitch);
+  border-color: var(--pitch);
+}
+
+::selection {
+  background: rgba(34, 197, 94, 0.35);
+}
